@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: "proxima-nova-soft", ".SFNSText-Regular", "San Francisco", "Helvetica Neue", sans-serif;
+    color: #404D54;
+    font-size: 18px;
+
+    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+    p { line-height: 26px; }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: #579CE3;
+        text-decoration: none;
+    }
+}
