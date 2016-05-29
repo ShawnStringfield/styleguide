@@ -5,3 +5,8 @@
 }
 
 .text-muted { color: #B3BFCC; }
+
+.date {
+  font-size: 18px;
+  @extend .text-muted;
+}

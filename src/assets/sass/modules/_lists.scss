@@ -1,0 +1,29 @@
+.list-item {
+  width: 100%;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.article {
+
+  h2 {
+    width: 100%;
+    line-height: 26px;
+    font-size: 20px;;
+    display: table;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .title {
+      width: 500px;
+      text-align: left;
+    }
+
+    .date {
+      text-align: right;
+    }
+  }
+
+}
