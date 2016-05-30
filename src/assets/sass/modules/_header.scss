@@ -13,5 +13,20 @@
 }
 
 .branding {
-    h1 { margin: 0; font-weight: normal; }
+    h1 {
+      margin: 0;
+      font-weight:
+      normal;
+    }
+}
+
+@include phone {
+  .header {
+    .container, .branding, .nav { display: block; }
+    .container .nav {
+      text-align: left;
+      margin-top: 20px;
+      li { padding: 0 25px 0 0; }
+    }
+  }
 }

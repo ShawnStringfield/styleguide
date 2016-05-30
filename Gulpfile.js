@@ -26,25 +26,12 @@ gulp.task('webpack', function() {
 	});
 });
 
-gulp.task('html', function() {
-  return gulp.src('index.html')
-    .pipe(gulp.dest('dist'))
-});
-
-gulp.task('css', function() {
-  return gulp.src('src/assets/css/styles.css')
-    .pipe(gulp.dest('dist/src/assets/css'));
-})
-
-gulp.task('webpack-build', function() {
-  exec('webpack');
-});
-
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		proxy: 'localhost:1122',
 		port: 1144,
-        open: false,
+    open: false,
+    online: false,
 		browser: "google chrome",
 		notify: false,
 		files: [
@@ -53,8 +40,6 @@ gulp.task('browser-sync', function() {
 		]
 	});
 });
-
-gulp.task('build', ['webpack-build', 'html', 'css', 'js'])
 
 gulp.task('watch', function() {
 	gulp.watch('src/assets/sass/**/*.scss', ['sass'], reload);

@@ -1,10 +1,16 @@
+// The line below keeps text at same scale on landscape mode 
+html { -webkit-text-size-adjust: 100%; }
+
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     color: #404D54;
     font-size: 18px;
 
-    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+      color: darken(#006EA6, 5);
+    }
 
     p { line-height: 26px; }
 
@@ -17,5 +23,6 @@ body {
     a {
         color: #579CE3;
         text-decoration: none;
+        &:hover { color: darken(#579CE3, 25) }
     }
 }
