@@ -1,15 +1,11 @@
-import React from 'react';
-import Header from './components/common/Header';
-import IntroText from './components/text/IntroText';
+import React, {Component} from 'react';
+import Headings from './components/text/headings';
 
-class App extends React.Component {
-render() {
-  return (
-      <div>
-        <Header />
-        <div className="container">
-          {this.props.children}
-        </div>
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Headings />
       </div>
     );
   }
