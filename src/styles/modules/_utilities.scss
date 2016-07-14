@@ -1,0 +1,15 @@
+.avatar {
+  display: block;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid #DDD;
+
+  img {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+  }
+}

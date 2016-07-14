@@ -1,6 +1,9 @@
 .list-item {
+  padding: 15px;
   width: 100%;
   border-bottom: 1px solid #EFEFEF;
+  overflow: hidden;
+  &:last-child { border-bottom: 0; }
 }
 
 .article {
@@ -24,6 +27,21 @@
       text-align: right;
     }
   }
+}
+
+.actors {
+  display: table;
+  width: 100%;
+
+  li { padding: 10px; }
+
+  .actor_name, .avatar {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .actor_name { padding-left: 15px; }
+  .avatar {}
 }
 
 .experience {

@@ -1,0 +1,15 @@
+.dropdown {
+  // display: none;
+  border: 1px solid #EFEFEF;
+  overflow: hidden;
+  width: auto;
+  min-width: 350px;
+
+  li {
+    @extend .list-item;
+    &:last-child { border-bottom: 0; }
+  }
+}
+
+.on { display: block; }
+.off { display: none; }
