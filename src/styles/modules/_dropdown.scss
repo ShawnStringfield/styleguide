@@ -1,9 +1,12 @@
 .dropdown {
-  display: none;
-  border: 1px solid #EFEFEF;
-  overflow: hidden;
+  // display: none;
+  @extend .list;
   width: auto;
   min-width: 350px;
+  border-top-left-radius: 0;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
 
   li {
     @extend .list-item;

@@ -4,7 +4,7 @@ import ButtonDropdown from '../../buttons/btn_dropdown';
 
 const Picklist = (props) => {
   let actors = props.actors.map( (actor, n) => {
-    while (n < 5) {
+    while (n < 7) {
       return (
         <PicklistItem
           key={actor.id}
@@ -15,7 +15,7 @@ const Picklist = (props) => {
   });
 
   return (
-    <div>
+    <div className="picklist">
       <ButtonDropdown />
       <ul className="actors dropdown">
         {actors}

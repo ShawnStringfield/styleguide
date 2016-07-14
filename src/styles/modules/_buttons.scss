@@ -2,8 +2,13 @@
   padding: 15px 35px;
   font-size: 16px;
   border: none;
-  background-color: #CCC;
+  background-color: #EFEFEF;
   outline: inherit;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: white;
 }
 
 .btn-group {
@@ -14,9 +19,9 @@
     float: left;
 
     &.btn-action {
-      border-left: 1px solid #DDD;
+      border-left: 1px solid darken($color-primary, 15%);
       padding: 15px;
-      background-color: darken(#CCC, 7%);
+      background-color: darken($color-primary, 7%);
     }
   }
 }
