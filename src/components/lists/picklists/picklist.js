@@ -1,6 +1,6 @@
 import React from 'react';
 import PicklistItem from './picklist-item';
-import Button from '../../buttons/btn_base';
+import ButtonDropdown from '../../buttons/btn_dropdown';
 
 const Picklist = (props) => {
   let actors = props.actors.map( (actor, n) => {
@@ -10,13 +10,13 @@ const Picklist = (props) => {
           key={actor.id}
           imgurl={props.imgurl}
           actor={actor} />
-      )
+      );
     }
   });
 
   return (
     <div>
-      <Button />
+      <ButtonDropdown />
       <ul className="actors dropdown">
         {actors}
       </ul>
