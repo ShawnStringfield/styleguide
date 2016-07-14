@@ -2,5 +2,21 @@
   padding: 15px 35px;
   font-size: 16px;
   border: none;
-  background-color: orange;
+  background-color: #CCC;
+  outline: inherit;
+}
+
+.btn-group {
+  button {
+    margin: 0;
+    display: block;
+    height: 50px;
+    float: left;
+
+    &.btn-action {
+      border-left: 1px solid #DDD;
+      padding: 15px;
+      background-color: darken(#CCC, 7%);
+    }
+  }
 }
