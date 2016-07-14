@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ButtonAction = () => {
-  return {
+  return (
     <button className="btn btn-primary">^</button>
-  }
+  )
 }
 
-export ButtonAction;
+export default ButtonAction;
