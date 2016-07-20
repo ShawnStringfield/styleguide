@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ButtonBase = (props) => {
+const Button = (props) => {
   return(
-    <button className="btn btn-primary">{props.buttonText}</button>
+    <button className={props.className}>{props.buttonText}</button>
   );
 };
 
-export default ButtonBase;
+export default Button;

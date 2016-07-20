@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ButtonAction = () => {
+const ButtonAction = (props) => {
   return (
     <button className="btn btn-primary btn-action">
-      <i className="material-icons">keyboard_arrow_down</i>
+      <i className="material-icons">{props.actionIcon}</i>
     </button>
   )
 }

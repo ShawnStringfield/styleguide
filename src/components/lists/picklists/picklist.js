@@ -3,22 +3,22 @@ import PicklistItem from './picklist-item';
 import ButtonDropdown from '../../buttons/btn_dropdown';
 
 const Picklist = (props) => {
-  let actors = props.actors.map( (actor, n) => {
+  let popularActors = props.popularActors.map( (popularActor, n) => {
     while (n < 7) {
       return (
         <PicklistItem
-          key={actor.id}
+          key={popularActor.id}
           imgurl={props.imgurl}
-          actor={actor} />
+          popularActor={popularActor} />
       );
     }
   });
 
   return (
     <div className="picklist">
-      <ButtonDropdown />
+      <ButtonDropdown buttonText="Select" actionIcon="keyboard_arrow_down" />
       <ul className="actors dropdown">
-        {actors}
+        {popularActors}
       </ul>
     </div>
   );

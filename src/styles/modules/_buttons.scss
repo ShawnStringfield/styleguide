@@ -4,24 +4,45 @@
   border: none;
   background-color: #EFEFEF;
   outline: inherit;
+	border-radius: 2px;
+	transition: background-color $hover-speed ease-out;
+
+	&:hover {
+		background-color: darken(#EFEFEF, 10%);
+	}
 }
 
 .btn-primary {
-  background-color: $color-primary;
+  background: $color-primary;
   color: white;
+
+	&:hover {
+		background-color: darken($color-primary, 8%);
+	}
 }
 
 .btn-group {
+
+	overflow: hidden;
+
   button {
     margin: 0;
     display: block;
-    height: 50px;
+    height: 48px;
     float: left;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
 
     &.btn-action {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
       border-left: 1px solid darken($color-primary, 15%);
       padding: 15px;
       background-color: darken($color-primary, 7%);
+
+			&:hover {
+				background-color: darken($color-primary, 10%);
+			}
     }
   }
 }

@@ -1,24 +1,24 @@
-"use strict";
-
-import http from 'axios';
+import {getMovieResourceFor, getPopularActors, getMovieFor} from './resources';
 
 const Store = () => {
-  const _now_playing = 'http://api.themoviedb.org/3/movie/now_playing';
-  const _actors = 'http://api.themoviedb.org/3/person/popular';
-  const _api_key = 'acd114ebbf19bc5e7a316e1e530d7327';
 
-  const getLatestMovies = () => {
-    return http.get(_now_playing + '?api_key=' + _api_key);
-  }
+  const getMovies = (type) => {
+    return fetch(getMovieResourceFor(type)).then( movies => movies.json() );
+  };
 
   const getPopularPeople = () => {
-    return http.get(_actors + '?api_key=' + _api_key);
-  }
+    return fetch(getPopularActors()).then( actors => actors.json() );
+  };
+
+  const getMovie = () => {
+    return fetch(getMovieFor(258489)).then( movie => movie.json() );
+  };
 
   return {
-    getLatestMovies: getLatestMovies,
-    getPopularPeople: getPopularPeople
-  }
-}
+    getMovies,
+    getPopularPeople,
+    getMovie
+  };
+};
 
 export default Store;
