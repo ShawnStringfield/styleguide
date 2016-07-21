@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import Store from './store';
 import Buttons from './components/buttons/buttons';
 import Picklist from './components/lists/picklists/picklist';
@@ -28,12 +27,6 @@ const App = React.createClass ({
     Store()
 			.getPopularPeople()
 			.then( (actors) => this.setState({popularActors: actors.results}) );
-
-			$(document).on('click', function(event) {
-				if (!$(event.target).closest('.picklist').length) {
-					this.setState({toggleState: false});
-				}
-			}.bind(this))
   },
 
 	handleClick(event) {

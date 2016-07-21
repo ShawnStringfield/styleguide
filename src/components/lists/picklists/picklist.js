@@ -1,33 +1,50 @@
 import React from 'react';
+import $ from 'jquery';
 import PicklistItem from './picklist-item';
 import ButtonDropdown from '../../buttons/btn_dropdown';
 
-const Picklist = (props) => {
-  const popularActors = props.popularActors.map( (popularActor, n) => {
-    while (n < 5) {
-      return (
-        <PicklistItem
-          key={popularActor.id}
-          imgurl={props.imgurl}
-          popularActor={popularActor} />
-      );
-    }
-  });
+const Picklist = React.createClass ({
 
-  return (
-    <span className="picklist">
+	getInitialState() {
+		return {}
+	},
 
-      <ButtonDropdown
-				buttonText={props.selected}
-				actionIcon={props.actionIcon}
-				action={props.action} />
+	componentDidMount() {
+		$(document).on('click', function(event) {
+			if (!$(event.target).closest('.picklist').length) {
+				console.log( 'Please Handle This' );
+			}
+		}.bind(this));
+	},
 
-      <ul className={'actors dropdown ' + props.toggleState}>
-        {popularActors}
-      </ul>
+	popularActors() {
+		return this.props.popularActors.map( (popularActor, n) => {
+	    return (
+	      <PicklistItem
+	        key={popularActor.id}
+	        imgurl={this.props.imgurl}
+	        popularActor={popularActor} />
+	    );
+	  });
+	},
 
-    </span>
-  );
-};
+	render() {
+		console.log( this.popularActors() );
+		return (
+			<span className="picklist">
+
+				<ButtonDropdown
+					buttonText={this.props.selected}
+					actionIcon={this.props.actionIcon}
+					action={this.props.action} />
+
+				<ul className={'actors dropdown ' + this.props.toggleState}>
+					{this.popularActors()}
+				</ul>
+
+			</span>
+		);
+	}
+});
 
 export default Picklist;
