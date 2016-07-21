@@ -1,18 +1,19 @@
 .dropdown {
-  // display: none;
   @extend .list;
+	display: none;
   width: auto;
   min-width: 350px;
   border-top-left-radius: 0;
   position: absolute;
+	top: 48px;
   z-index: 5;
   background-color: white;
+
+	&.on { display: block; }
+	&.off { display: none; }
 
   li {
     @extend .list-item;
     &:last-child { border-bottom: 0; }
   }
 }
-
-.on { display: block; }
-.off { display: none; }

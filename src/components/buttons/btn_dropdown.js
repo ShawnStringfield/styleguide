@@ -4,10 +4,17 @@ import ButtonAction from './btn_action';
 
 const ButtonDropdown = (props) => {
   return (
-    <div className="btn-group">
-      <Button className="btn btn-primary" buttonText={props.buttonText} />
-      <ButtonAction actionIcon={props.actionIcon} />
-    </div>
+    <span className="btn-group">
+      <Button
+				className="btn btn-primary"
+				buttonText={props.buttonText}
+				action={props.action} />
+
+      <ButtonAction
+				className="btn-action"
+				actionIcon={props.actionIcon}
+				action={props.action} />
+    </span>
   );
 };
 

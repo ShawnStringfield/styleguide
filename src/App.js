@@ -1,8 +1,7 @@
 import React from 'react';
+import $ from 'jquery';
 import Store from './store';
-
 import Buttons from './components/buttons/buttons';
-
 import Picklist from './components/lists/picklists/picklist';
 
 const App = React.createClass ({
@@ -12,7 +11,8 @@ const App = React.createClass ({
       imgurl: 'http://image.tmdb.org/t/p/w75/',
 			popularActors: [],
       movies: [],
-      movie: {}
+      movie: {},
+			toggleState: false
     };
   },
 
@@ -28,17 +28,34 @@ const App = React.createClass ({
     Store()
 			.getPopularPeople()
 			.then( (actors) => this.setState({popularActors: actors.results}) );
+
+			$(document).on('click', function(event) {
+				if (!$(event.target).closest('.picklist').length) {
+					this.setState({toggleState: false});
+				}
+			}.bind(this))
   },
+
+	handleClick(event) {
+		this.state.toggleState = !this.state.toggleState
+		this.setState({toggleState: this.state.toggleState});
+	},
 
   render() {
     return (
       <div className="container">
-				<Buttons />
-				
-        <h2>Dropdown</h2>
-        <Picklist
-          imgurl={this.state.imgurl}
-          popularActors={this.state.popularActors} />
+    		<Buttons />
+
+				<div className="doc-section">
+					<h2>Dropdown</h2>
+					<Picklist
+						imgurl={this.state.imgurl}
+						action={this.handleClick}
+						actionIcon={this.state.toggleState === false ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
+						selected="Selected"
+						toggleState={this.state.toggleState === true ? 'on' : 'off'}
+						popularActors={this.state.popularActors} />
+    		</div>
       </div>
     );
   }

@@ -12,6 +12,6 @@ describe('<Button />', function() {
 	it('should contain text', function() {
 		const wrapper = shallow(<Buttons {...props} />);
 		const expected = wrapper.find('Button').at(0).prop('buttonText');
-		expect(expected).length.to.equal('Primary Button');
+		expect(expected).length.to.equal('Default Button');
 	});
 });

@@ -4,7 +4,7 @@ import ButtonDropdown from './btn_dropdown';
 
 const Buttons = () => {
 	return (
-		<div className="button-list">
+		<div className="doc-section button-list">
 			<h2>Buttons</h2>
 			<Button className="btn" buttonText="Default Button" />
 			<Button className="btn btn-primary" buttonText="Primary Button" />

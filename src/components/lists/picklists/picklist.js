@@ -3,8 +3,8 @@ import PicklistItem from './picklist-item';
 import ButtonDropdown from '../../buttons/btn_dropdown';
 
 const Picklist = (props) => {
-  let popularActors = props.popularActors.map( (popularActor, n) => {
-    while (n < 7) {
+  const popularActors = props.popularActors.map( (popularActor, n) => {
+    while (n < 5) {
       return (
         <PicklistItem
           key={popularActor.id}
@@ -15,12 +15,18 @@ const Picklist = (props) => {
   });
 
   return (
-    <div className="picklist">
-      <ButtonDropdown buttonText="Select" actionIcon="keyboard_arrow_down" />
-      <ul className="actors dropdown">
+    <span className="picklist">
+
+      <ButtonDropdown
+				buttonText={props.selected}
+				actionIcon={props.actionIcon}
+				action={props.action} />
+
+      <ul className={'actors dropdown ' + props.toggleState}>
         {popularActors}
       </ul>
-    </div>
+
+    </span>
   );
 };
 
