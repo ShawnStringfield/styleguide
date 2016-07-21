@@ -29,7 +29,7 @@ const App = React.createClass ({
 			.then( (actors) => this.setState({popularActors: actors.results}) );
   },
 
-	handleClick(event) {
+	handleClick() {
 		this.state.toggleState = !this.state.toggleState
 		this.setState({toggleState: this.state.toggleState});
 	},
@@ -37,7 +37,7 @@ const App = React.createClass ({
   render() {
     return (
       <div className="container">
-    		<Buttons />
+				<Buttons />
 
 				<div className="doc-section">
 					<h2>Dropdown</h2>
@@ -48,7 +48,7 @@ const App = React.createClass ({
 						selected="Selected"
 						toggleState={this.state.toggleState === true ? 'on' : 'off'}
 						popularActors={this.state.popularActors} />
-    		</div>
+					</div>
       </div>
     );
   }

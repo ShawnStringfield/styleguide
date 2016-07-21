@@ -18,14 +18,14 @@ const Picklist = React.createClass ({
 	},
 
 	popularActors() {
-		return this.props.popularActors.map( (popularActor, n) => {
-	    return (
-	      <PicklistItem
-	        key={popularActor.id}
-	        imgurl={this.props.imgurl}
-	        popularActor={popularActor} />
-	    );
-	  });
+		return this.props.popularActors.map( (popularActor) => {
+			return (
+				<PicklistItem
+					key={popularActor.id}
+					imgurl={this.props.imgurl}
+					popularActor={popularActor} />
+			);
+		});
 	},
 
 	render() {

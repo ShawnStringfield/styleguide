@@ -6,6 +6,6 @@ import './styles/styles.scss';
 
 
 ReactDOM.render(
-  <Router history={browserHistory} routes={Routes} />, 
+  <Router history={browserHistory} routes={Routes} />,
   document.querySelector('#app')
 );
