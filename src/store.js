@@ -1,17 +1,18 @@
+import http from 'axios';
 import {getMovieResourceFor, getPopularActors, getMovieFor} from './resources';
 
 const Store = () => {
 
   const getMovies = (type) => {
-    return fetch(getMovieResourceFor(type)).then( movies => movies.json() );
+    return http.get(getMovieResourceFor(type)).then( movies => movies.data.results );
   };
 
   const getPopularPeople = () => {
-    return fetch(getPopularActors()).then( actors => actors.json() );
+    return http.get(getPopularActors()).then( actors => actors.data.results );
   };
 
   const getMovie = () => {
-    return fetch(getMovieFor(258489)).then( movie => movie.json() );
+    return http.get(getMovieFor(258489)).then( movie => movie.data );
   };
 
   return {

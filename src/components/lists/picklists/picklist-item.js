@@ -1,10 +1,15 @@
 import React from 'react';
 
-const PicklistItem = (props) => {
+const PicklistItem = function(props) {
+
+	function getListItem(actor) {
+		props.action(actor);
+	}
+
   return (
-    <li>
-      <span className="avatar"><img src={props.imgurl + props.popularActor.profile_path} alt=""/></span>
-      <span className="actor_name">{props.popularActor.name}</span>
+    <li onClick={getListItem.bind(this, props)}>
+			{props.avatar}
+      <span>{props.listItemLabel}</span>
     </li>
   );
 };

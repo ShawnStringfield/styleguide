@@ -1,0 +1,48 @@
+.btn {
+  padding: 15px 35px;
+  font-size: 16px;
+  border: none;
+  background-color: #EFEFEF;
+  outline: inherit;
+	border-radius: 2px;
+	transition: background-color .4s ease-out;
+
+	&:hover {
+		background-color: darken(#EFEFEF, 10%);
+	}
+}
+
+.btn-primary {
+  background: #F6786A;
+  color: white;
+
+	&:hover {
+		background-color: darken(#F6786A, 8%);
+	}
+}
+
+.btn-group {
+
+	overflow: hidden;
+
+  button {
+    margin: 0;
+    display: block;
+    height: 48px;
+    float: left;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+
+    &.btn-action {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+      border-left: 1px solid darken(#F6786A, 15%);
+      padding: 15px;
+      background-color: darken(#F6786A, 7%);
+
+			&:hover {
+				background-color: darken(#F6786A, 10%);
+			}
+    }
+  }
+}

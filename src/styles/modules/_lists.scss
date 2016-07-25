@@ -13,8 +13,13 @@
 }
 
 .picklist {
-  position: relative;
+	ul {
+		height: 300px;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
   .btn-group { overflow: hidden; }
+	.pick-list-container { position: absolute; }
 }
 
 .article {
@@ -44,15 +49,18 @@
   display: table;
   width: 100%;
 
-  li { padding: 10px; }
+  li {
+		padding: 10px;
 
-  .actor_name, .avatar {
-    display: table-cell;
-    vertical-align: middle;
-  }
+		span {
+			display: table-cell;
+			vertical-align: middle;
+		}
 
-  .actor_name { padding-left: 15px; }
-  .avatar {}
+		span:last-child {
+			padding-left: 15px;
+		}
+	}
 }
 
 .experience {
