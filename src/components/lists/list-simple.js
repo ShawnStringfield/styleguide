@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 const SimpleList = function(props) {
-	var list = props.listData.limitTo(props.limit).map( (item) => {
+	const list = props.listData.limitTo(props.limit).map( (item) => {
 		if (item) {
 			return (
 				<li key={item.id}>{item.label}</li>
 			)
 		}
-	});
+	})
 
 	return (
 		<ul className="list">
@@ -16,4 +16,4 @@ const SimpleList = function(props) {
 	)
 }
 
-export default SimpleList;
+export default SimpleList

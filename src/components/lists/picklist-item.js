@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const PicklistItem = function(props) {
 
 	function getListItem(actor) {
-		props.action(actor);
+		props.action(actor)
 	}
 
   return (
@@ -11,7 +11,7 @@ const PicklistItem = function(props) {
 			{props.avatar}
       <span>{props.listItemLabel}</span>
     </li>
-  );
-};
+  )
+}
 
-export default PicklistItem;
+export default PicklistItem

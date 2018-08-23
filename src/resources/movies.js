@@ -1,18 +1,26 @@
-const themovedbBaseUrl = 'https://api.themoviedb.org/3/'
-const themovedbApiKey = '?api_key=acd114ebbf19bc5e7a316e1e530d7327';
-const baseImageUrl = 'https://image.tmdb.org/t/p/w300';
-
-export const movieimageurl = baseImageUrl;
+import {moveidbBaseUrl, moveidbApiKey} from '../constants'
 
 export const getMovieResourceFor = (movie_type) => {
 	// Allowable Types: now_playing, upcoming, popular, top_rated
-	return `${themovedbBaseUrl}movie/${movie_type}${themovedbApiKey}`;
+	return `${moveidbBaseUrl}movie/${movie_type}${moveidbApiKey}`
 }
 
 export const getPopularActors = () => {
-	return `${themovedbBaseUrl}person/popular${themovedbApiKey}`;
+	return `${moveidbBaseUrl}person/popular${moveidbApiKey}`
 }
 
 export const getMovieFor = (id) => {
-	return `${themovedbBaseUrl}movie/${id}${themovedbApiKey}&append_to_response=credits`;
+	return `${moveidbBaseUrl}movie/${id}${moveidbApiKey}&append_to_response=credits`
 }
+
+// const getMovies = (type) => {
+// 	return http.get(getMovieResourceFor(type)).then( movies => movies.data.results )
+// }
+//
+// const getPopularPeople = () => {
+// 	return http.get(getPopularActors()).then( actors => actors.data.results )
+// }
+//
+// const getMovie = () => {
+// 	return http.get(getMovieFor(258489)).then( movie => movie.data )
+// }

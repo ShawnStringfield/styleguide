@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const ButtonAction = (props) => {
   return (
@@ -8,4 +8,4 @@ const ButtonAction = (props) => {
   )
 }
 
-export default ButtonAction;
+export default ButtonAction

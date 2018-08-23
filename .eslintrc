@@ -23,12 +23,11 @@
     "mocha": true
   },
   "rules": {
-
     "quotes": 0,
     "no-console": 0,
     "no-debugger": 1,
     "no-var": 1,
-    "semi": [1, "always"],
+    "semi": [1, "never"],
     "no-trailing-spaces": 0,
     "eol-last": 0,
     "no-underscore-dangle": 0,
@@ -60,7 +59,7 @@
     "react/no-set-state": 0,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 0,
-    "react/prop-types": 1,
+    "react/prop-types": 0,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 1,
     "react/self-closing-comp": 1,

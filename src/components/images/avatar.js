@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Avatar = function(props) {
 	return (
@@ -8,4 +8,4 @@ const Avatar = function(props) {
 	)
 }
 
-export default Avatar;
+export default Avatar

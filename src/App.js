@@ -1,10 +1,10 @@
-import React from 'react';
-import {getPopularActors} from './resources/movies';
-import http from 'axios';
+import React from 'react'
+import {getPopularActors} from './resources/movies'
+import http from 'axios'
 
 function movies() {
   http.get(getPopularActors()).then(function(movies) {
-    console.log(movies.data.results);
+    console.log(movies.data.results)
   })
 }
 
@@ -13,4 +13,4 @@ const App = () => (
   <h1>Hello</h1>
 )
 
-export default App;
+export default App

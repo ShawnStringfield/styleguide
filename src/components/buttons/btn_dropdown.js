@@ -1,6 +1,6 @@
-import React from 'react';
-import Button from './btn_base';
-import ButtonAction from './btn_action';
+import React from 'react'
+import Button from './btn_base'
+import ButtonAction from './btn_action'
 
 const ButtonDropdown = (props) => {
   return (
@@ -15,7 +15,7 @@ const ButtonDropdown = (props) => {
 				actionIcon={props.actionIcon}
 				action={props.action} />
     </span>
-  );
-};
+  )
+}
 
-export default ButtonDropdown;
+export default ButtonDropdown

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Headings = () => {
   return (
@@ -12,4 +12,4 @@ const Headings = () => {
   )
 }
 
-export default Headings;
+export default Headings
