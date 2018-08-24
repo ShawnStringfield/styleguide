@@ -1,16 +1,23 @@
-import React from 'react'
-import {getPopularActors} from './resources/movies'
-import http from 'axios'
+import React, {Component} from 'react'
+import Movies from './resources/movies'
 
-function movies() {
-  http.get(getPopularActors()).then(function(movies) {
-    console.log(movies.data.results)
-  })
+class App extends Component {
+
+  state = {
+    movies: [],
+    actors: [],
+    movie: {}
+  }
+
+  componentDidMount() {
+    Movies.getMovies('now_playing').then(movies => {this.setState({movies: movies})})
+    Movies.getPopularActors().then(actors => {this.setState({actors: actors})})
+    Movies.getMovie(258489).then(movie => {this.setState({movie: movie})})
+  }
+
+  render() {
+    return <h1>StyleGuide</h1>
+  }
 }
-
-const App = () => (
-  movies(),
-  <h1>Hello</h1>
-)
 
 export default App

@@ -1,26 +1,24 @@
+import HTTP from '../utils/HTTP'
 import {moveidbBaseUrl, moveidbApiKey} from '../constants'
 
-export const getMovieResourceFor = (movie_type) => {
+const getMovies = (movie_type) => {
 	// Allowable Types: now_playing, upcoming, popular, top_rated
-	return `${moveidbBaseUrl}movie/${movie_type}${moveidbApiKey}`
+	const url = `movie/${movie_type}${moveidbApiKey}`
+	return HTTP({url: url}).then(movies => movies)
 }
 
-export const getPopularActors = () => {
-	return `${moveidbBaseUrl}person/popular${moveidbApiKey}`
+const getPopularActors = () => {
+	const url = `person/popular${moveidbApiKey}`
+	return HTTP({url: url}).then(actors => actors)
 }
 
-export const getMovieFor = (id) => {
-	return `${moveidbBaseUrl}movie/${id}${moveidbApiKey}&append_to_response=credits`
+const getMovie = (id) => {
+	const url = `movie/${id}${moveidbApiKey}&append_to_response=credits`
+	return HTTP({url: url}).then(movie => movie)
 }
 
-// const getMovies = (type) => {
-// 	return http.get(getMovieResourceFor(type)).then( movies => movies.data.results )
-// }
-//
-// const getPopularPeople = () => {
-// 	return http.get(getPopularActors()).then( actors => actors.data.results )
-// }
-//
-// const getMovie = () => {
-// 	return http.get(getMovieFor(258489)).then( movie => movie.data )
-// }
+export default {
+	getMovies: getMovies,
+	getPopularActors: getPopularActors,
+	getMovie: getMovie
+}
